@@ -28,10 +28,6 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-echo "${RED}"
-readelf -n $1
-echo "${NC}"
-
 echo " "
 
 # create LTTng sesssion
