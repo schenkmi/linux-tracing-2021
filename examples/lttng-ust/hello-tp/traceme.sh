@@ -14,7 +14,7 @@ function usage()
     echo " "
     echo "`basename $0` [executable]"
     echo " "
-    echo "Example: `basename $0` ./dynamic-dtrace"
+    echo "Example: `basename $0` ./hello"
 }
 
 function execute_with_log()
@@ -38,8 +38,7 @@ echo " "
 lttng create `basename $1`
 
 # enable events
-lttng enable-event --kernel \
-                   --userspace-probe=sdt:$1:my_provider:my_probe my_probe_cal
+lttng enable-event --userspace hello_world:my_first_tracepoint
 
 # start the tracing    
 lttng start
