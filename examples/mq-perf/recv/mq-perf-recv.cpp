@@ -445,12 +445,14 @@ int main(int argc, char **argv)
         mq_unlink(QUEUE_NAME);
     }
 
-    if (optIPCMethod) {
-        free(optIPCMethod);
+    if (optEncapsulation) {
+        free(optEncapsulation);
+        optEncapsulation = nullptr;
     }
 
     if (optIPCMethod) {
         free(optIPCMethod);
+        optIPCMethod = nullptr;
     }
 
     timeProfiling.process(MEASURE_SAFETY_MARGIN /* remove first and last 100 elements */);

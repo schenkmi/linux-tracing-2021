@@ -458,10 +458,12 @@ int main(int argc, char **argv)
 
     if (optEncapsulation) {
         free(optEncapsulation);
+        optEncapsulation = nullptr;
     }
 
     if (optIPCMethod) {
         free(optIPCMethod);
+        optIPCMethod = nullptr;
     }
 
     return 0;
